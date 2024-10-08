@@ -49,8 +49,8 @@
 
 @media (max-width: 480px) {
     .logo img {
-        max-width: 100px; /* Ajustamos el tamaño para pantallas pequeñas */
-        padding: 8px; /* Reducimos el padding para pantallas más pequeñas */
+        max-width: 80px; /* Ancho aumentado en móviles */
+        padding: 10px; /* Aumentamos también el padding */
     }
 }
         .logo h1 {
@@ -237,6 +237,9 @@
                 padding: 12px;
             }
         }
+        .main-content {
+            padding: 40px 20px;
+        }
 
     </style>
 </head>
@@ -246,14 +249,13 @@
     <header>
         <div class="logo">
             <img src="img/logo.png" alt="Logo de la empresa">
-          
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
             <button>Buscar</button>
         </div>
         <div class="user-options">
-            <a href="#">Iniciar sesión</a>
+            <a href="login.html">Iniciar sesión</a>
             <a href="#">Carrito</a>
         </div>
     </header>
@@ -261,24 +263,69 @@
     <!-- Barra de Navegación -->
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Categorías</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#" onclick="loadContent('inicio')">Inicio</a></li>
+            <li><a href="#" onclick="loadContent('categorias')">Categorías</a></li>
+            <li><a href="#" onclick="loadContent('ofertas')">Ofertas</a></li>
+            <li><a href="#" onclick="loadContent('contacto')">Contacto</a></li>
         </ul>
     </nav>
 
-    <!-- Banner Principal -->
-    <section class="banner">
-        <div class="banner-content">
-            <h2>Productos Quirúrgicos de Calidad</h2>
-            <p>Encuentra todo lo que necesitas en nuestra tienda</p>
-            <button>Comprar ahora</button>
-        </div>
-    </section>
+    <!-- Contenido principal -->
+    <div class="main-content" id="main-content">
+        <!-- Aquí cargaremos el contenido dinámicamente -->
+        <section class="banner">
+            <div class="banner-content">
+                <h2>Productos Quirúrgicos de Calidad</h2>
+                <p>Encuentra todo lo que necesitas en nuestra tienda</p>
+                <button>Comprar ahora</button>
+            </div>
+        </section>
+        <section class="productos">
+            <h2>Productos Destacados</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="producto1.jpg" alt="Producto 1">
+                    <h3>Instrumento Quirúrgico A</h3>
+                    <p>$500.00 MXN</p>
+                    <button>Agregar al carrito</button>
+                </div>
+                <div class="product">
+                    <img src="producto2.jpg" alt="Producto 2">
+                    <h3>Instrumento Quirúrgico B</h3>
+                    <p>$750.00 MXN</p>
+                    <button>Agregar al carrito</button>
+                </div>
+                <!-- Más productos... -->
+            </div>
+        </section>
+    
+    </div>
 
-    <!-- Secciones de Productos -->
-    <section class="productos">
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Tienda Quirúrgica. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función para cargar contenido dinámico
+        function loadContent(section) {
+            const content = {
+                inicio: `
+                    <section class="banner">
+                        <div class="banner-content">
+                            <h2>Productos Quirúrgicos de Calidad</h2>
+                            <p>Encuentra todo lo que necesitas en nuestra tienda</p>
+                            <button>Comprar ahora</button>
+                        </div>
+                    </section>
+                     <section class="productos">
         <h2>Productos Destacados</h2>
         <div class="product-grid">
             <div class="product">
@@ -296,18 +343,48 @@
             <!-- Más productos... -->
         </div>
     </section>
+`,
+                categorias: `
+                    <section class="categorias">
+                        <h2>Nuestras Categorías</h2>
+                        <ul>
+                            <li>Instrumentos Quirúrgicos</li>
+                            <li>Material Médico</li>
+                            <li>Productos Desechables</li>
+                            <li>Antisépticos y Desinfectantes</li>
+                        </ul>
+                    </section>`,
+                ofertas: `
+                    <section class="ofertas">
+                        <h2>Ofertas Especiales</h2>
+                        <p>Aprovecha los descuentos en estos productos:</p>
+                        <ul>
+                            <li>Descuento en Antiséptico 500 ml</li>
+                            <li>2x1 en Bisturíes</li>
+                            <li>20% de descuento en Guantes Quirúrgicos</li>
+                        </ul>
+                    </section>`,
+                contacto: `
+                    <section class="contacto">
+                        <h2>Contáctanos</h2>
+                        <p>Teléfono: 123-456-7890</p>
+                        <p>Email: contacto@tiendaquirurgica.com</p>
+                        <form>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </section>`
+            };
 
-    <!-- Pie de Página -->
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 Tienda Quirúrgica. Todos los derechos reservados.</p>
-            <div class="social-icons">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-        </div>
-    </footer>
+            // Reemplaza el contenido del div con id "main-content"
+            document.getElementById('main-content').innerHTML = content[section];
+        }
+    </script>
 
 </body>
 </html>
