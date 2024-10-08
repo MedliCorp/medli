@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medli - Innovando en Soluciones Médicas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+    <style>/* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #003d58;
+        }
+        
+        .header .logo img {
+            height: 50px;
+        }
+        
+        .nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav ul li {
+            margin-left: 20px;
+        }
+        
+        .nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .header-buttons .btn {
+            margin-left: 20px;
+            background-color: #0077b6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .header-buttons .btn:hover {
+            background-color: #0096c7;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .hero-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+        }
+        
+        .hero .btn.primary {
+            background-color: #0077b6;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .hero .btn.primary:hover {
+            background-color: #0096c7;
+        }
+        
+        /* Marcas Section */
+        .marcas {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        
+        .marcas-slider {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .marcas-slider .marca img {
+            width: 150px;
+        }
+        
+        /* Categorías Section */
+        .categorias {
+            padding: 50px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        
+        .categoria-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .categoria {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .categoria:hover {
+            transform: scale(1.05);
+        }
+        
+        .categoria img {
+            width: 80px;
+        }
+        
+        .categoria p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #003d58;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer .social-links a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        
+        .footer .social-links img {
+            width: 30px;
+        }
+        </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Medli Logo">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <a href="tel:+5554412748" class="btn call">Llámanos</a>
+            <a href="#cart" class="btn cart"><img src="cart-icon.png" alt="Carrito"></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <video autoplay muted loop class="hero-video">
+            <source src="videos/4121322-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>¡Siempre basados en la dedicación por nuestro trabajo!</h1>
+            <a href="#acerca" class="btn primary">Acerca de Medli</a>
+        </div>
+    </section>
+
+    <!-- Marcas Principales -->
+    <section class="marcas">
+        <h2>Marcas Principales</h2>
+        <div class="marcas-slider">
+            <div class="marca">
+                <img src="unimed.png" alt="Unimed">
+            </div>
+            <div class="marca">
+                <img src="margena.png" alt="Margena">
+            </div>
+            <div class="marca">
+                <img src="hexyn.png" alt="Hexyn">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="categorias">
+        <h2>Categorías</h2>
+        <div class="categoria-grid">
+            <div class="categoria">
+                <img src="respiratorio.png" alt="Sistemas respiratorios">
+                <p>Sistemas respiratorios</p>
+            </div>
+            <div class="categoria">
+                <img src="oxigeno.png" alt="Terapia de oxígeno">
+                <p>Terapia de oxígeno</p>
+            </div>
+            <!-- Más categorías aquí -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Medli. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
