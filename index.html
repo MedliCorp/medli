@@ -3,245 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medli - Innovando en Soluciones Médicas</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
-    <style>/* General Styles */
-        * {
+    <title>Tienda de Productos Quirúrgicos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
             color: #333;
         }
-        
-        /* Header */
-        .header {
+
+        /* Encabezado */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #0066cc;
             padding: 10px 20px;
-            background-color: #003d58;
-        }
-        
-        .header .logo img {
-            height: 50px;
-        }
-        
-        .nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav ul li {
-            margin-left: 20px;
-        }
-        
-        .nav ul li a {
-            text-decoration: none;
             color: white;
-            font-weight: bold;
         }
-        
-        .header-buttons .btn {
-            margin-left: 20px;
-            background-color: #0077b6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        
-        .header-buttons .btn:hover {
-            background-color: #0096c7;
-        }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
+
+        /* Estilo mejorado del logo */
+        .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
+        }
+        .logo img {
+    max-width: 150px; /* Aumentamos el tamaño máximo del logo */
+    height: auto;
+    margin-right: 10px;
+    background-color: white;
+     
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 100px; /* Ajustamos el tamaño para pantallas medianas */
+        padding: 8px; /* Reducimos el padding para adaptarse a pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px; /* Ajustamos el tamaño para pantallas pequeñas */
+        padding: 8px; /* Reducimos el padding para pantallas más pequeñas */
+    }
+}
+        .logo h1 {
+            font-size: 1.5rem;
             color: white;
+            margin: 0;
         }
-        
-        .hero-video {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            top: 0;
-            left: 0;
-            z-index: -1;
+
+        /* Barra de búsqueda */
+        .search-bar input {
+            padding: 5px;
+            width: 300px;
         }
-        
-        .hero-content {
-            text-align: center;
+
+        .search-bar button {
+            background-color: white;
+            border: none;
+            color: #0066cc;
+            padding: 5px 10px;
+            cursor: pointer;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-        }
-        
-        .hero .btn.primary {
-            background-color: #0077b6;
-            padding: 15px 30px;
-            border-radius: 5px;
+
+        /* Opciones de usuario */
+        .user-options a {
+            margin-left: 20px;
+            color: white;
             text-decoration: none;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #004c99;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
             color: white;
-            margin-top: 20px;
+            text-decoration: none;
         }
-        
-        .hero .btn.primary:hover {
-            background-color: #0096c7;
-        }
-        
-        /* Marcas Section */
-        .marcas {
-            padding: 50px;
-            background-color: #ffffff;
+
+        /* Banner Principal */
+        .banner {
+            background-color: #e6f0ff;
+            padding: 50px 20px;
             text-align: center;
         }
-        
-        .marcas-slider {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+
+        .banner-content h2 {
+            color: #004c99;
         }
-        
-        .marcas-slider .marca img {
-            width: 150px;
+
+        .banner-content button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
         }
-        
-        /* Categorías Section */
-        .categorias {
-            padding: 50px;
-            background-color: #f0f0f0;
+
+        /* Productos */
+        .productos {
+            padding: 40px 20px;
             text-align: center;
         }
-        
-        .categoria-grid {
-            display: flex;
-            justify-content: center;
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
-        
-        .categoria {
+
+        .product {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            transition: transform 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        
-        .categoria:hover {
-            transform: scale(1.05);
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
         }
-        
-        .categoria img {
-            width: 80px;
-        }
-        
-        .categoria p {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: #003d58;
+
+        .product button {
+            background-color: #0066cc;
             color: white;
-            padding: 20px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #004c99;
+            color: white;
+            padding: 20px 0;
             text-align: center;
         }
-        
-        .footer .social-links a {
+
+        .social-icons a {
             margin: 0 10px;
-            display: inline-block;
+            color: white;
+            text-decoration: none;
         }
-        
-        .footer .social-links img {
-            width: 30px;
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-bar {
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .search-bar input {
+                width: 90%;
+            }
+
+            .user-options {
+                margin-top: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .banner-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .banner-content button {
+                width: 100%;
+                padding: 15px;
+            }
         }
-        </style>
+
+        @media (max-width: 480px) {
+            .logo img {
+                max-width: 50px;
+            }
+
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            .search-bar input {
+                width: 80%;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .product button {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .banner-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .banner-content button {
+                padding: 12px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+
+    <!-- Encabezado -->
+    <header>
         <div class="logo">
-            <img src="img/logo.png" alt="Medli Logo">
+            <img src="img/logo.png" alt="Logo de la empresa">
+          
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#promociones">Promociones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="header-buttons">
-            <a href="tel:+5554412748" class="btn call">Llámanos</a>
-            <a href="#cart" class="btn cart"><img src="cart-icon.png" alt="Carrito"></a>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+        <div class="user-options">
+            <a href="#">Iniciar sesión</a>
+            <a href="#">Carrito</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <video autoplay muted loop class="hero-video">
-            <source src="videos/4121322-uhd_3840_2160_25fps.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h1>¡Siempre basados en la dedicación por nuestro trabajo!</h1>
-            <a href="#acerca" class="btn primary">Acerca de Medli</a>
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Productos Quirúrgicos de Calidad</h2>
+            <p>Encuentra todo lo que necesitas en nuestra tienda</p>
+            <button>Comprar ahora</button>
         </div>
     </section>
 
-    <!-- Marcas Principales -->
-    <section class="marcas">
-        <h2>Marcas Principales</h2>
-        <div class="marcas-slider">
-            <div class="marca">
-                <img src="unimed.png" alt="Unimed">
+    <!-- Secciones de Productos -->
+    <section class="productos">
+        <h2>Productos Destacados</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="producto1.jpg" alt="Producto 1">
+                <h3>Instrumento Quirúrgico A</h3>
+                <p>$500.00 MXN</p>
+                <button>Agregar al carrito</button>
             </div>
-            <div class="marca">
-                <img src="margena.png" alt="Margena">
+            <div class="product">
+                <img src="producto2.jpg" alt="Producto 2">
+                <h3>Instrumento Quirúrgico B</h3>
+                <p>$750.00 MXN</p>
+                <button>Agregar al carrito</button>
             </div>
-            <div class="marca">
-                <img src="hexyn.png" alt="Hexyn">
-            </div>
+            <!-- Más productos... -->
         </div>
     </section>
 
-    <!-- Categorías -->
-    <section class="categorias">
-        <h2>Categorías</h2>
-        <div class="categoria-grid">
-            <div class="categoria">
-                <img src="respiratorio.png" alt="Sistemas respiratorios">
-                <p>Sistemas respiratorios</p>
-            </div>
-            <div class="categoria">
-                <img src="oxigeno.png" alt="Terapia de oxígeno">
-                <p>Terapia de oxígeno</p>
-            </div>
-            <!-- Más categorías aquí -->
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Pie de Página -->
+    <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Medli. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <p>© 2024 Tienda Quirúrgica. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
